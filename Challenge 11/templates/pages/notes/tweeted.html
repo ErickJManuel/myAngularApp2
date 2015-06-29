@@ -1,0 +1,31 @@
+<!--
+  On the notes tweeted page, within the tweeted.html template, use filter to display only notes that have been tweeted
+  (i.e., having a tweeted property set to true).
+//-->
+<div class="note-wrapper">
+  <div class="note-content">
+    <div class="notes-header">
+      <h1 title="Notes">Tweeted Notes</h1>
+      <input type="search" ng-model="searchTerm"/><label>Search</label>
+    </div>
+
+    <div class="note-wrapper">
+      <!--
+        1.  On the notes tweeted page, within the tweeted.html template, use filter to display only notes that have been tweeted (i.e., having a tweeted property set to true).
+        2.  The notes tweeted page has a search field so that users can filter notes. Let's take advantage of this using another filter.
+            Add an additional search filter to the displayed notes on our notes tweeted page.
+        3.  Use a filter to display the tweeted date in our p tag like so: Tweeted on a Monday in October.
+            In the p tag inside the .card div, create a date filter on note.tweetedDate and then provide the format that will give us the Tweeted on a Monday in October format.
+        4.  It's the middle of the night and you are ready to finish your Angular NoteWrangler app! You realize the title of our card container div would be more beneficial if
+            it included a fancy date along with the title of the note.
+            Add the date to the end of the title and format it like so: Oct. 08.
+      //-->
+      <a class="card-notes" ng-repeat="note in notes | filter: {tweeted:true} | filter: searchTerm" ng-href="#/notes/{{note.id}}">
+        <div class="card" title="{{note.title} {{note.tweetedDate | date: 'MMM dd'}}">
+          <h2 class="h3">{{note.title}}</h2>
+          <p>{{note.tweetedDate | date: "'Tweeted on a' EEEE 'in' MMMM"}}</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

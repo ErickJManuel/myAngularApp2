@@ -1,0 +1,53 @@
+<div class="note-wrapper">
+	<!--
+		Below code is to enable filter to use searching by title 
+		<input ng-model="search.title" />
+
+		Replacing the above code with a wildcard search
+	//-->
+	<input ng-model="search.$" />
+
+	<div class="note-content">
+		<div class="notes-header">
+			<h1 title="Notes">Notes</h1>
+		</div>
+
+		<div class="note-wrapper">
+
+		<!--
+			Proper use of filters
+			date:		Formats date to a string based on the requested format.
+			lowercase:	Converts string to lowercase.
+			uppercase:	Converts string to uppercase.
+			limitTo:	Creates a new array or string containing only a specified number of elements.
+			orderBy:	Orders a specified array by the expression predicate (numerical, alphabetical).
+
+			{{date_expression | date : format}}
+			{{603606171000 | date : "MM/dd/yyyy"}}
+
+			Built in Angular filter - "The filter Filter"
+			Selects a subset of items from an array and returns it as a new array.
+			{{["Alyssa", "Nicoll", "loves", "Angular", "to", "pieces"] | filter:"a"}} -> returns ["Alyssa", "Angular"]
+
+				Replacing below code with the filter logic
+				<a class="card-notes">
+
+				In the below example we need a two way bind to our activeCategory variable
+				<a class="card-notes" ng-repeat="note in notes | filter:{category: {name: activeCategory}}">
+
+				Replacing the above code with the newly added search logic, now this will just search on the title values
+				<a class="card-notes" ng-repeat="note in notes | filter:search" ng-href="#/notes/{{note.id}}">
+
+				Replacing the above code with the below logic which is using 2 filters
+			//-->
+			<a class="card-notes" ng-repeat="note in notes | filter:activeCategory | filter:search">
+				<nw-cateory-select></nw-cateory-select>
+
+				<nw-card header="note.header" icon="note.icon"></nw-card>
+				<nw-card header="note.header" icon="note.icon"></nw-card>
+				<nw-card header="note.header" icon="note.icon"></nw-card>
+				<nw-card header="note.header" icon="note.icon"></nw-card>
+			</a>
+		</div>
+	</div>
+</div>

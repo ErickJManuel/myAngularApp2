@@ -1,0 +1,35 @@
+<div class="note-wrapper">
+	<div class="note-content">
+		<div class="notes-header">
+			<h1 title="Notes">Notes</h1>
+		</div>
+
+		<div class="note-wrapper">
+
+			<!--
+				Will now be using a controller below so adding the alias for the ng-repeat here
+				Uh oh, using the local scope, we no longer have access to notes in ng-repeat
+
+				<a class="card-notes" ng-repeat="note in notes">
+
+				We are also changing the way we set up the .header so below code is now bad:
+
+				<a class="card-notes">
+					<nw-card header="{{note.header}}"></nw-card>
+					<nw-card header="{{note.header}}"></nw-card>
+					<nw-card header="{{note.header}}"></nw-card>
+					<nw-card header="{{note.header}}"></nw-card>
+				</a>
+			//-->
+
+			<a class="card-notes">
+				<nw-cateory-select></nw-cateory-select>
+
+				<nw-card header="note.header" icon="note.icon"></nw-card>
+				<nw-card header="note.header" icon="note.icon"></nw-card>
+				<nw-card header="note.header" icon="note.icon"></nw-card>
+				<nw-card header="note.header" icon="note.icon"></nw-card>
+			</a>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,13 @@
+<!--
+	1. 	We can see in the index.html that we're already passing Notes and Users to the name attribute of our nav item directive.
+		Use data binding to display the value of scope.name as the content of our a tag.
+	2.	Give each nwNavItem a class of active if it isActive().
+	3.	On click, call the activate() method.
+	4.	Create an href for each nav item with a dynamic path using the name variable. The route should look like:
+		#/value_of_scope_dot_name and use data binding.
+	5.	Notice that routes are case sensitive. When we click on Users, it finds no route for /Users, and therefore redirects to
+		/notes. Solve this issue by using a lowercase filter on the name binding within the route.
+	6.	Since we've added an expression to the href attribute of our a tag, we need to change it to ng-href attribute. Check out
+		the docs to see why this is important.
+//-->
+<a class="list-item" href="#/{{name | lowercase}}" ng-class="{'active': isActive()}" ng-click="activate()">{{name}}</a>

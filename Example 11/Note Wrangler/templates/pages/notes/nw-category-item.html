@@ -1,0 +1,8 @@
+<!--
+adding the makeActive() function here to perform the makeActive call 
+adding the class based on the return of our categoryActive function
+//-->
+<a class="sort-menu-item" ng-click="makeActive()" ng-class="{'active': categoryActive()}">
+	<i class="icon left {{cateogry.icon}}"></i>
+	{{category.name}} {{categoryCount()}}
+</a>

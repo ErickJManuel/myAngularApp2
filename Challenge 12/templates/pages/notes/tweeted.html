@@ -1,0 +1,22 @@
+<div class="note-wrapper">
+  <div class="note-content">
+    <div class="notes-header">
+      <h1 title="Notes">Tweeted Notes</h1>
+      <input type="search" ng-model="searchTerm"/><label>Search</label>
+    </div>
+
+    <div class="note-wrapper">
+      <a class="card-notes" ng-repeat=" note in notes | filter : {tweeted:true}">
+
+      <!--
+        2.  Now, use our brand spankin' new popover directive to display the note's title on hover.
+      //-->
+        <div class="card" popover="{{note.title}} {{note.tweetedDate | date: 'MMM. dd'}}">
+          <h2 class="h3">{{note.title}}</h2>
+          <p>{{note.tweetedDate | date: "'Tweeted on a' EEEE 'in' MMMM"}}</p>
+        </div>
+      </a>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<!-- Removed code from index.html changed for new additions to code
+<div class="card" title='{{note.title}}'>
+	<div ng-if='icon'>
+		<i class='icon icon-card {{note.icon}}'></i>
+	</div>
+
+	<h2 class="h3">{{note.title}}</h2>
+</div>
+//-->
+
+<!--
+	below code is the sample from the exercise
+	Not using $scope, see logic below this one to see what the usage is with $scope
+	Also, when using a local scope and not $scope, we no longer have access to notes from the ng-repeat service
+
+	<div class="card">
+		<h2 class="h3">{{note.header}}</h2>
+	</div>
+//-->
+
+<!-- below logic uses the $scope variable so we don't need to reference a controller ailas //-->
+<div class="card">
+	<h2 class="h3">{{header}}</h2>
+	<i class="icon icon-card {{icon}}"></i>
+</div>

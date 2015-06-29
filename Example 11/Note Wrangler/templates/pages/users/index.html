@@ -1,0 +1,30 @@
+<div class="note-wrapper">
+	<div class="note-content">
+		<div class="notes-header">
+			<h1 title="Notes">Notes</h1>
+		</div>
+
+		<div class="note-wrapper">
+			<a class="card-notes" ng-repeat="note in notes">
+			<!--
+				In the below example we need a two way bind to our activeCategory variable
+			//-->
+			<a class="card-notes" ng-repeat="note in notes | filter:{category: {name: activeCategory}}">
+				<div class="card" title="{{note.title}}">
+					<h2 class="h3">{{note.title}}</h2>
+					<p>{{note.description}}</p>
+				</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="users-wrapper">
+	<h1>Users</h1>
+
+	<div class="users-wrapper">
+		<a class="card-users" ng-repeat="user in users">
+			<nw-card header="user.name" image="gravatarUrl(user.email)" body="user.bio" id="user.id">
+			</nw-card>
+		</a>
+	</div>
+</div>

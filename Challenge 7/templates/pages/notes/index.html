@@ -1,0 +1,18 @@
+<div class="note-wrapper">
+  <div class="note-content">
+    <div class="notes-header">
+      <h1 title="Notes">Notes</h1>
+    </div>
+
+    <div class="note-wrapper">
+      <a class="card-notes" ng-repeat="note in notes">
+        <nw-card header="note.title" description="note.description" tweeted="note.tweeted" ng-href="#/notes/{{note.id}}"></nw-card>
+
+        <!--
+          Using the button tag within our notes/index.html template, invoke the new method we defined on $scope from NotesIndexController and pass in the note's description attribute.
+        //-->
+        <button class="btn" ng-click="tweetThatNote(note.description)">Tweet It!</button>
+      </a>
+    </div>
+  </div>
+</div>
